@@ -64,9 +64,10 @@ def gesture_recognition_app():
 
                     current_sequence = []
 
-                    if detected_gesture:
-                        cv2.putText(frame, f"Gesture: {detected_gesture}", (10, 30),
-                        cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
+                # Show the predicted gesture on the screen
+                if detected_gesture:
+                    cv2.putText(frame, f'Gesture: {detected_gesture}', (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
+
 
         # Display
         cv2.imshow('Gesture Control App', frame)
